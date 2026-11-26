@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BGMI HACK Premium</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;background:#080e19;color:white;
+ font-family:Arial,sans-serif;
+}
+header{
+ text-align:center;padding:25px 10px;
+ background:#101e35;border-bottom:2px solid #168bff;
+}
+header h1{color:#42c8ff;margin:0}
+.container{max-width:450px;margin:25px auto;padding:15px}
+.card{
+ background:#142238;border:1px solid #29466c;
+ padding:22px;border-radius:16px;margin-bottom:18px;
+}
+.price{text-align:center;font-size:35px;color:#4ce3a0}
+button{
+ width:100%;padding:15px;border:0;border-radius:10px;
+ background:#168bff;color:white;font-size:17px;
+ font-weight:bold;margin-top:12px;
+}
+input{
+ width:100%;padding:13px;margin:8px 0;
+ border-radius:8px;border:1px solid #456080;
+ background:#0b1526;color:white;
+}
+.small{color:#a9bdd5;font-size:13px;line-height:1.6}
+.feature{padding:10px;background:#1a304d;border-radius:8px;margin:8px 0}
+.hidden{display:none}
+</style>
+</head>
+<body>
+<header>
+ <h1>BGMI HACK</h1>
+ <p>PREMIUM GAMING ZONE</p>
+</header>
+
+<div class="container">
+
+ <section id="login" class="card">
+  <h2>Welcome Gamer</h2>
+  <p>Enter your name to continue</p>
+  <input id="username" placeholder="Your Name">
+  <button onclick="login()">CONTINUE</button>
+ </section>
+
+ <section id="subscription" class="card hidden">
+  <h2>Premium Membership</h2>
+  <div class="price">₹5</div>
+  <p style="text-align:center">Per Month</p>
+  <p class="small">
+   Get access to premium BGMI gaming guides,
+   sensitivity tips and control settings.
+  </p>
+  <button onclick="pay()">PAY ₹5 WITH UPI</button>
+  <p class="small">
+   Payment access will be activated only after
+   verified payment confirmation.
+  </p>
+ </section>
+
+ <section id="premium" class="card hidden">
+  <h2>Welcome to Premium!</h2>
+  <div class="feature">🎯 Sensitivity Settings Guide</div>
+  <div class="feature">🎮 Gyroscope Guide</div>
+  <div class="feature">🔥 4 Finger Control Guide</div>
+  <div class="feature">🏆 Headshot Training Tips</div>
+  <div class="feature">⚡ Performance Tips</div>
+  <p class="small">Educational gaming content only. No game cheats.</p>
+ </section>
+
+</div>
+
+<script>
+function login(){
+ const name=document.getElementById("username").value.trim();
+ if(!name){alert("Enter your name");return;}
+ sessionStorage.setItem("bgmi_name",name);
+ document.getElementById("login").classList.add("hidden");
+ document.getElementById("subscription").classList.remove("hidden");
+}
+
+function pay(){
+ alert("Payment gateway will be connected in the next step. No payment has been made.");
+}
+</script>
+</body>
+</html>
